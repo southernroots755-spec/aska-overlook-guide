@@ -34,7 +34,7 @@
   --chip:#22352B; --target:#2A2B20; color-scheme:dark;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth; scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+html{scroll-behavior:smooth; scroll-padding-top:calc(env(safe-area-inset-top,0px) + 12px)}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 body{background:var(--bg); color:var(--fg); font-family:var(--body); font-size:16.5px; line-height:1.55; -webkit-text-size-adjust:100%}
 
@@ -45,18 +45,20 @@ body{background:var(--bg); color:var(--fg); font-family:var(--body); font-size:1
 .mast .tag i{display:block; width:28px; height:1px; background:#D97B3A}
 .mast p.intro{max-width:34em; margin:16px auto 0; font-size:15px; color:#DCD5C4; line-height:1.5}
 
-nav.chips{position:sticky; top:env(safe-area-inset-top,0px); z-index:10; background:var(--bg); border-bottom:1px solid var(--line)}
-nav.chips .row{display:flex; gap:8px; overflow-x:auto; padding:10px 16px; max-width:760px; margin:0 auto; scrollbar-width:none}
-nav.chips .row::-webkit-scrollbar{display:none}
+nav.chips{background:var(--bg); border-bottom:1px solid var(--line); scroll-margin-top:0}
+nav.chips .label{max-width:760px; margin:0 auto; padding:14px 16px 0; font-size:12px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--sage)}
+nav.chips .row{display:flex; flex-wrap:wrap; gap:8px; padding:10px 16px 14px; max-width:760px; margin:0 auto}
+.totop{position:fixed; right:16px; bottom:calc(16px + env(safe-area-inset-bottom,0px)); z-index:20; background:var(--forest); color:var(--cream); text-decoration:none; font-size:14px; font-weight:500; padding:10px 15px; border-radius:99px; box-shadow:0 4px 14px rgba(0,0,0,.22)}
+.totop:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
 nav.chips a{flex:none; text-decoration:none; color:var(--fg); background:var(--chip); border-radius:99px; padding:7px 13px; font-size:14px; font-weight:500; white-space:nowrap}
 nav.chips a:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
 
 main{max-width:760px; margin:0 auto; padding-inline:16px; padding-block:8px 48px}
 h2.area{font-family:var(--display); font-weight:600; font-size:26px; color:var(--sage); margin:34px 0 12px; display:flex; align-items:center; gap:12px; text-wrap:balance}
-h2.area{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 64px)}
+h2.area{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 12px)}
 h2.area::after{content:""; flex:1; height:1px; background:var(--line)}
 
-section.dev{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:18px 18px 8px; margin-bottom:14px; scroll-margin-top:calc(env(safe-area-inset-top,0px) + 64px)}
+section.dev{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:18px 18px 8px; margin-bottom:14px; scroll-margin-top:calc(env(safe-area-inset-top,0px) + 12px)}
 section.dev:target{background:var(--target); border-color:var(--accent); box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent)}
 section.dev h3{font-family:var(--display); font-weight:700; font-size:24px; line-height:1.15; margin:0; text-wrap:balance}
 .model{font-size:13px; color:var(--muted); margin:3px 0 10px; letter-spacing:.02em}
@@ -96,7 +98,8 @@ footer{text-align:center; font-size:12px; color:var(--muted); padding-block:10px
   <p class="intro">How to use everything in the cabin, with quick fixes if something isn't working. If a fix doesn't work, please don't open or reset any equipment. Text us at the number in your booking messages and we'll help.</p>
 </header>
 
-<nav class="chips" aria-label="Jump to">
+<nav class="chips" id="sections" aria-label="Jump to a section">
+  <div class="label">Jump to</div>
   <div class="row">
     <a href="#wifi">WiFi</a><a href="#door">Door</a><a href="#thermostat">Thermostat</a>
     <a href="#tv">TVs</a><a href="#roku">Roku</a><a href="#switch">Switch</a>
@@ -159,14 +162,14 @@ footer{text-align:center; font-size:12px; color:var(--muted); padding-block:10px
 
 <section class="dev" id="tv">
   <h3>TVs</h3>
-  <p class="model">Samsung TVs with soundbar in the great room · Vizio TVs on the front porch and in the primary bedroom</p>
+  <p class="model">Samsung TVs (the one in the basement living room has a Samsung soundbar) · Vizio TVs on the front porch and in the primary bedroom</p>
   <div class="note">The <b>Roku remote</b> turns the TV on and off and controls the volume, so it's usually the only remote you need. See <a href="#roku">Roku</a>.</div>
   <h4>Samsung TVs</h4>
   <ol>
     <li>Press <b>Power</b> on the Samsung remote.</li>
     <li>To switch to the Roku or game console, press <b>Home</b>, press <b>left</b>, choose <b>Connected Devices</b>, and pick the device.</li>
     <li><b>Volume</b> up or down to adjust, press it to mute. <b>Return</b> goes back.</li>
-    <li>In the great room, the soundbar turns on with the TV and the TV remote controls its volume.</li>
+    <li>In the basement living room, the Samsung soundbar turns on with the TV and the TV remote controls its volume.</li>
   </ol>
   <h4>Vizio TVs</h4>
   <ol>
@@ -177,7 +180,7 @@ footer{text-align:center; font-size:12px; color:var(--muted); padding-block:10px
   <ul>
     <li><b>"No Signal":</b> the TV is on the wrong input. Press INPUT (Vizio) or Home › Connected Devices (Samsung).</li>
     <li><b>Samsung remote not responding:</b> point it at the TV and hold <b>Return + Play/Pause</b> for 3 seconds to re-pair. If it's slow, charge it with its USB-C port or set it solar panel up in the light.</li>
-    <li><b>No sound in the great room:</b> press <b>Source</b> on the soundbar until it shows TV ARC. Still nothing? Unplug the soundbar, plug it back in, and turn it on. It also turns itself off after 18 minutes of silence.</li>
+    <li><b>No sound from the basement soundbar:</b> press <b>Source</b> on the soundbar until it shows TV ARC. Still nothing? Unplug the soundbar, plug it back in, and turn it on. It also turns itself off after 18 minutes of silence.</li>
   </ul>
   <h4>Please don't</h4>
   <ul class="dont"><li>Spray liquid or cleaners on the screens. A soft, dry cloth only.</li><li>Leave the porch TV uncovered in rain.</li></ul>
@@ -271,6 +274,7 @@ footer{text-align:center; font-size:12px; color:var(--muted); padding-block:10px
     <li>Pick a cycle: <b>Normal</b> for everyday loads, <b>Express</b> for faster, <b>Tough</b> for baked-on messes.</li>
     <li>Close the door and press <b>START/RESUME</b> on the front panel.</li>
     <li>The light is <b>blue</b> while washing, <b>red</b> while drying, <b>white</b> when done.</li>
+    <li><b>The door pops open on its own when the cycle finishes.</b> That's normal and helps the dishes dry. An open door means it's done.</li>
   </ol>
   <h4>If it's not working</h4>
   <ul>
@@ -390,6 +394,7 @@ footer{text-align:center; font-size:12px; color:var(--muted); padding-block:10px
 <div class="help"><strong>Need a hand?</strong>Text us at the number in your booking messages. We're happy to help.</div>
 </main>
 <footer>ASKA OVERLOOK · BLUE RIDGE, GEORGIA</footer>
+<a class="totop" href="#sections">↑ All sections</a>
 
 </body>
 </html>
