@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Aska Overlook Guest Guide</title>
+<meta name="description" content="How to use everything at Aska Overlook, a Blue Ridge, Georgia mountain cabin.">
+<meta name="robots" content="noindex">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap">
+<style>
+/* Layout: forest masthead with the crest, a sticky row of section chips, then one narrow column of device cards, each a deep-link target (#coffee, #hot-tub…). */
+:root{
+  --forest:#1E3B2F; --cream:#F3EEE3;
+  --bg:#F7F3EA; --surface:#FFFDF8; --line:#DED6C4;
+  --fg:#1E2B24; --muted:#56655B; --sage:#5F7863; --accent:#A44C17; --accent-soft:#F1E1D2;
+  --chip:#EAE3D3; --target:#FBEFE3;
+  --display:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --body:'Jost', 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#13201A; --surface:#1A2A22; --line:#2E4237;
+    --fg:#ECE6D8; --muted:#A9B5AA; --sage:#9DB4A0; --accent:#E08A4E; --accent-soft:#3A2A1F;
+    --chip:#22352B; --target:#2A2B20; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#13201A; --surface:#1A2A22; --line:#2E4237;
+  --fg:#ECE6D8; --muted:#A9B5AA; --sage:#9DB4A0; --accent:#E08A4E; --accent-soft:#3A2A1F;
+  --chip:#22352B; --target:#2A2B20; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--bg); color:var(--fg); font-family:var(--body); font-size:16.5px; line-height:1.55; -webkit-text-size-adjust:100%}
+
+.mast{background:var(--forest); color:var(--cream); padding-block:28px 26px; padding-inline:16px; text-align:center}
+.mast svg{width:92px; height:92px; display:block; margin:0 auto 14px}
+.mast h1{font-family:var(--display); font-weight:700; font-size:clamp(26px,7vw,36px); letter-spacing:.18em; margin:0 -.18em 0 0; line-height:1.1}
+.mast .tag{display:flex; align-items:center; justify-content:center; gap:10px; margin-top:8px; font-size:11.5px; letter-spacing:.3em; color:#A9BDA9}
+.mast .tag i{display:block; width:28px; height:1px; background:#D97B3A}
+.mast p.intro{max-width:34em; margin:16px auto 0; font-size:15px; color:#DCD5C4; line-height:1.5}
+
+nav.chips{position:sticky; top:env(safe-area-inset-top,0px); z-index:10; background:var(--bg); border-bottom:1px solid var(--line)}
+nav.chips .row{display:flex; gap:8px; overflow-x:auto; padding:10px 16px; max-width:760px; margin:0 auto; scrollbar-width:none}
+nav.chips .row::-webkit-scrollbar{display:none}
+nav.chips a{flex:none; text-decoration:none; color:var(--fg); background:var(--chip); border-radius:99px; padding:7px 13px; font-size:14px; font-weight:500; white-space:nowrap}
+nav.chips a:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+
+main{max-width:760px; margin:0 auto; padding-inline:16px; padding-block:8px 48px}
+h2.area{font-family:var(--display); font-weight:600; font-size:26px; color:var(--sage); margin:34px 0 12px; display:flex; align-items:center; gap:12px; text-wrap:balance}
+h2.area{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 64px)}
+h2.area::after{content:""; flex:1; height:1px; background:var(--line)}
+
+section.dev{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:18px 18px 8px; margin-bottom:14px; scroll-margin-top:calc(env(safe-area-inset-top,0px) + 64px)}
+section.dev:target{background:var(--target); border-color:var(--accent); box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent)}
+section.dev h3{font-family:var(--display); font-weight:700; font-size:24px; line-height:1.15; margin:0; text-wrap:balance}
+.model{font-size:13px; color:var(--muted); margin:3px 0 10px; letter-spacing:.02em}
+.where{font-size:14px; color:var(--muted); margin:0 0 6px}
+h4{font-size:12px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin:16px 0 6px}
+ol,ul{margin:0 0 6px; padding-left:22px}
+li{margin:4px 0}
+li::marker{color:var(--sage); font-weight:600}
+p{margin:0 0 8px}
+.note{background:var(--accent-soft); border-radius:8px; padding:10px 12px; font-size:15px; margin:10px 0}
+.dont li::marker{content:"✕  "; color:var(--accent); font-size:12px}
+b{font-weight:600}
+.help{margin-top:34px; text-align:center; font-size:15px; color:var(--muted)}
+.help strong{display:block; font-family:var(--display); font-size:22px; color:var(--fg); margin-bottom:4px}
+footer{text-align:center; font-size:12px; color:var(--muted); padding-block:10px 30px; letter-spacing:.06em}
+</style>
+</head>
+<body>
+
+
+<header class="mast">
+  <svg viewBox="-4 -4 288 288" aria-hidden="true">
+    <defs><clipPath id="cr"><circle cx="140" cy="140" r="124"/></clipPath></defs>
+    <circle cx="140" cy="140" r="132" fill="none" stroke="#F3EEE3" stroke-width="2"/>
+    <circle cx="140" cy="140" r="124" fill="#1E3B2F" stroke="#F3EEE3" stroke-width="4"/>
+    <g clip-path="url(#cr)">
+      <circle cx="182" cy="86" r="13" fill="#D97B3A"/>
+      <path d="M0 176 L52 128 L82 150 L126 96 L164 138 L190 118 L240 164 L280 146 L280 280 L0 280 Z" fill="#8FA893"/>
+      <path d="M0 206 L46 172 L88 194 L140 148 L186 188 L222 170 L280 206 L280 280 L0 280 Z" fill="#F3EEE3"/>
+      <path d="M126 96 L140 112 L150 104 L164 138" fill="none" stroke="#1E3B2F" stroke-width="2" stroke-linejoin="round"/>
+      <line x1="40" y1="232" x2="240" y2="232" stroke="#1E3B2F" stroke-width="1.5"/>
+      <line x1="70" y1="246" x2="210" y2="246" stroke="#1E3B2F" stroke-width="1.5"/>
+    </g>
+  </svg>
+  <h1>ASKA OVERLOOK</h1>
+  <div class="tag"><i></i>GUEST GUIDE<i></i></div>
+  <p class="intro">How to use everything in the cabin, with quick fixes if something isn't working. If a fix doesn't work, please don't open or reset any equipment. Text us at the number in your booking messages and we'll help.</p>
+</header>
+
+<nav class="chips" aria-label="Jump to">
+  <div class="row">
+    <a href="#wifi">WiFi</a><a href="#door">Door</a><a href="#thermostat">Thermostat</a>
+    <a href="#tv">TVs</a><a href="#roku">Roku</a><a href="#switch">Switch</a>
+    <a href="#coffee">Coffee</a><a href="#dishwasher">Dishwasher</a><a href="#toaster-oven">Toaster oven</a>
+    <a href="#air-fryer">Air fryer</a><a href="#instant-pot">Instant Pot</a>
+    <a href="#hot-tub">Hot tub</a><a href="#fans">Fans</a><a href="#vacuum">Vacuum</a><a href="#leak-sensors">Leak alarm</a>
+  </div>
+</nav>
+
+<main>
+
+<h2 class="area">Getting settled</h2>
+
+<section class="dev" id="wifi">
+  <h3>WiFi</h3>
+  <p class="model">eero mesh network</p>
+  <p>Network: <b>Aska Overlook</b><br>Password: <b>AskaAdventure58</b></p>
+  <p>Or scan the QR code on the WiFi card at the front entry to join without typing.</p>
+  <h4>If it's not working</h4>
+  <ul>
+    <li>Find the small white eero unit. <b>Solid white</b> means online. <b>Blinking white</b> means it's still connecting. <b>Solid red</b> means offline.</li>
+    <li>Unplug the eero, wait 30 seconds, and plug it back in. Give it a minute or two to restart.</li>
+    <li>Still red? Text us.</li>
+  </ul>
+  <h4>Please don't</h4>
+  <ul class="dont"><li>Press any button on the eero. The reset button erases the network.</li></ul>
+</section>
+
+<section class="dev" id="door">
+  <h3>Front door keypad</h3>
+  <p class="model">Schlage Encode</p>
+  <ol>
+    <li><b>To unlock,</b> enter your code on the touchscreen. Wait for the Home and checkmark icons to flash.</li>
+    <li><b>To lock when leaving,</b> press the Lock icon on the outside keypad.</li>
+    <li><b>From inside,</b> turn the thumbturn toward the edge of the door to lock, away from the edge to unlock.</li>
+    <li><b>At night,</b> press the Home button at the bottom left to light up the keypad.</li>
+  </ol>
+  <h4>If it's not working</h4>
+  <ul>
+    <li>A flashing Lock button with a <b>red X</b> means the code was wrong. Enter it again slowly.</li>
+    <li>A <b>red battery icon</b> means low batteries. Please text us. The lock keeps working during a power outage.</li>
+  </ul>
+</section>
+
+<section class="dev" id="thermostat">
+  <h3>Thermostat</h3>
+  <p class="model">Google Nest Learning Thermostat</p>
+  <ol>
+    <li><b>Change the temperature</b> by turning the dial.</li>
+    <li><b>Change the mode</b> (Heat, Cool, Heat·Cool, Off): press the thermostat toward the wall, turn to <b>Mode</b>, press, pick a mode, press again.</li>
+    <li><b>Heat·Cool</b> keeps the house within a range and switches between heating and cooling on its own.</li>
+  </ol>
+  <h4>If it's not working</h4>
+  <ul><li>Make sure the mode isn't set to Off. If the temperature won't change, text us.</li></ul>
+  <h4>Please don't</h4>
+  <ul class="dont"><li>Pull the thermostat off the wall or change settings beyond temperature and mode.</li></ul>
+</section>
+
+<h2 class="area">Entertainment</h2>
+
+<section class="dev" id="tv">
+  <h3>TVs</h3>
+  <p class="model">Samsung TVs with soundbar in the great room · Vizio TVs on the front porch and in the primary bedroom</p>
+  <div class="note">The <b>Roku remote</b> turns the TV on and off and controls the volume, so it's usually the only remote you need. See <a href="#roku">Roku</a>.</div>
+  <h4>Samsung TVs</h4>
+  <ol>
+    <li>Press <b>Power</b> on the Samsung remote.</li>
+    <li>To switch to the Roku or game console, press <b>Home</b>, press <b>left</b>, choose <b>Connected Devices</b>, and pick the device.</li>
+    <li><b>Volume</b> up or down to adjust, press it to mute. <b>Return</b> goes back.</li>
+    <li>In the great room, the soundbar turns on with the TV and the TV remote controls its volume.</li>
+  </ol>
+  <h4>Vizio TVs</h4>
+  <ol>
+    <li>Press <b>Power</b> on the Vizio remote.</li>
+    <li>Press <b>INPUT</b>, highlight the input you want, and press <b>OK</b>.</li>
+  </ol>
+  <h4>If it's not working</h4>
+  <ul>
+    <li><b>"No Signal":</b> the TV is on the wrong input. Press INPUT (Vizio) or Home › Connected Devices (Samsung).</li>
+    <li><b>Samsung remote not responding:</b> point it at the TV and hold <b>Return + Play/Pause</b> for 3 seconds to re-pair. If it's slow, charge it with its USB-C port or set it solar panel up in the light.</li>
+    <li><b>No sound in the great room:</b> press <b>Source</b> on the soundbar until it shows TV ARC. Still nothing? Unplug the soundbar, plug it back in, and turn it on. It also turns itself off after 18 minutes of silence.</li>
+  </ul>
+  <h4>Please don't</h4>
+  <ul class="dont"><li>Spray liquid or cleaners on the screens. A soft, dry cloth only.</li><li>Leave the porch TV uncovered in rain.</li></ul>
+</section>
+
+<section class="dev" id="roku">
+  <h3>Streaming with Roku</h3>
+  <p class="model">Roku Streaming Stick Plus · Guest Mode</p>
+  <p>Our Rokus use <b>Guest Mode</b>, so you can stream with your own accounts. When your stay ends, the Roku signs you out and erases your info automatically.</p>
+  <h4>Getting started</h4>
+  <ol>
+    <li>Turn on the TV with the Roku remote.</li>
+    <li>The first time, pick your <b>checkout date</b> on the calendar and confirm. You'll be signed out at 11:00 AM that day.</li>
+    <li>Open or add the apps you want and sign in with your own account.</li>
+  </ol>
+  <h4>What you can sign in to</h4>
+  <ul>
+    <li><b>Streaming services</b> like Netflix, Hulu, Disney+, Prime Video, Max, Peacock, Paramount+, Sling TV and YouTube TV.</li>
+    <li><b>Your cable or satellite provider</b> in apps like ESPN and network apps. They usually show a code to enter on your phone.</li>
+    <li><b>Free apps</b> like YouTube and The Roku Channel work without signing in.</li>
+  </ul>
+  <h4>Good to know</h4>
+  <ul>
+    <li>You can't make purchases on our Roku account. Rentals and purchases work only in apps where you have your own payment method.</li>
+    <li><b>Leaving early?</b> Press Home › Guest Mode Options › <b>Sign out and clear info</b>.</li>
+    <li><b>Change your sign-out date:</b> Home › Guest Mode Options › Change automatic sign-out date.</li>
+  </ul>
+  <h4>If it's not working</h4>
+  <ul>
+    <li><b>Remote not responding:</b> take out both batteries, press any two buttons, and put the batteries back.</li>
+    <li><b>Restart the Roku:</b> unplug it, wait 5 seconds, plug it back in.</li>
+    <li><b>Re-pair the remote:</b> hold the pairing button (back of the remote or under the battery cover) for 5 seconds until the light flashes. No pairing button? Hold <b>Back + Home</b> for 5 seconds.</li>
+  </ul>
+</section>
+
+<section class="dev" id="switch">
+  <h3>Nintendo Switch 2</h3>
+  <p class="model">With 3 Pro Controllers · Mario Kart World</p>
+  <ol>
+    <li>Turn on the TV and switch to the console's input. Press the <b>HOME</b> button on a controller.</li>
+    <li><b>Pair a Pro Controller:</b> HOME Menu › <b>Controllers</b> › <b>Change Grip/Order</b>, then hold the <b>SYNC</b> button on the controller for a second. The player light stays on when it's paired.</li>
+    <li><b>Or pair with a cable:</b> plug the controller into the dock with the USB-C cable.</li>
+    <li><b>Mario Kart World, 2–4 players:</b> start the game, press <b>L + R</b> on the title screen, choose <b>Multiplayer</b> and the number of players, then pick a mode.</li>
+  </ol>
+  <h4>If it's not working</h4>
+  <ul><li>Controller won't connect: repeat step 2 or use the cable. No picture: check the TV input.</li></ul>
+  <h4>Please don't</h4>
+  <ul class="dont"><li>Move the console to another room or take it out of the dock.</li><li>Make purchases in the eShop.</li></ul>
+</section>
+
+<h2 class="area" id="kitchen">Kitchen</h2>
+
+<section class="dev" id="coffee">
+  <h3>Coffee maker</h3>
+  <p class="model">Keurig K-Duo Hot &amp; Iced · pods on one side, a carafe on the other</p>
+  <h4>Single cup (K-Cup pod)</h4>
+  <ol>
+    <li>Fill the water tank on the back to the <b>MAX FILL</b> line.</li>
+    <li>Set your mug on the drip tray. For a tall travel mug, remove the tray.</li>
+    <li>Lift the handle, drop in a pod, and push the handle all the way down.</li>
+    <li>Press <b>OZ</b>, pick a size, then press <b>BREW</b>. For bolder coffee press <b>STRONG</b> after choosing a size. For hotter coffee press <b>X-HOT</b> before BREW.</li>
+  </ol>
+  <h4>Iced coffee</h4>
+  <p>Fill a plastic tumbler to the top with ice and use the <b>Brew Over Ice</b> setting on the single-cup side. Single cup only, and never brew over ice into a glass.</p>
+  <h4>Full carafe (ground coffee)</h4>
+  <ol>
+    <li>Fill the water tank to <b>MAX FILL</b>.</li>
+    <li>Put a <b>flat-bottom 12-cup paper filter</b> in the filter basket.</li>
+    <li>Add about <b>1 tablespoon of coffee per cup</b>, no more than 15 tablespoons.</li>
+    <li>Set the carafe on the warming plate, press <b>CUPS</b>, pick a size, press <b>BREW</b>.</li>
+    <li>You can pour mid-brew. Put the carafe back within 20 seconds.</li>
+    <li>The warming plate stays on for 2 hours. To turn it off sooner, hold <b>CUPS</b> for 3 seconds.</li>
+  </ol>
+  <h4>If it's not working</h4>
+  <ul>
+    <li><b>Nothing happens:</b> it sleeps 5 minutes after the last brew. Lift the handle or press any button.</li>
+    <li><b>Add-water light:</b> fill the tank and press it down firmly into its base.</li>
+    <li><b>Grounds in the carafe:</b> use a flat-bottom filter and no more than 15 tablespoons.</li>
+    <li><b>All buttons blinking at once:</b> text us.</li>
+  </ul>
+  <h4>Please don't</h4>
+  <ul class="dont"><li>Put the carafe or filter basket in the dishwasher. Hand-wash only.</li><li>Fill past MAX FILL or put anything but water in the tank.</li></ul>
+</section>
+
+<section class="dev" id="dishwasher">
+  <h3>Dishwasher</h3>
+  <p class="model">KitchenAid</p>
+  <ol>
+    <li>Plastic items, small plates and bowls go on the upper racks. Knives go handles up.</li>
+    <li>Put a detergent pod in the main compartment and slide the lid closed.</li>
+    <li>Pick a cycle: <b>Normal</b> for everyday loads, <b>Express</b> for faster, <b>Tough</b> for baked-on messes.</li>
+    <li>Close the door and press <b>START/RESUME</b> on the front panel.</li>
+    <li>The light is <b>blue</b> while washing, <b>red</b> while drying, <b>white</b> when done.</li>
+  </ol>
+  <h4>If it's not working</h4>
+  <ul>
+    <li>Buttons don't respond: the Control Lock may be on. Hold the lock button for 3 seconds.</li>
+    <li>Flashing error code: press <b>CANCEL/DRAIN</b> and text us.</li>
+  </ul>
+  <h4>Please don't</h4>
+  <ul class="dont"><li>Use hand dish soap. Dishwasher detergent only.</li><li>Sit or lean on the open door.</li></ul>
+</section>
+
+<section class="dev" id="toaster-oven">
+  <h3>Toaster oven and air fryer</h3>
+  <p class="model">Ninja Flip · flips up against the backsplash for storage</p>
+  <ol>
+    <li>Flip the oven down. It won't turn on while flipped up.</li>
+    <li>Press <b>Power</b>, then <b>MODE +/–</b> to choose Air Fry, Bake, Toast, Bagel, Pizza and more.</li>
+    <li>Set time and temperature with <b>TIME/SLICES</b> and <b>TEMP/SHADE</b> (slices and darkness for toast).</li>
+    <li>Press <b>START/STOP</b>. Most modes preheat; add food when it beeps.</li>
+    <li>Air fry with the basket on the top rails and the sheet pan below to catch drips.</li>
+  </ol>
+  <h4>If it's not working</h4>
+  <ul><li><b>Won't turn on:</b> make sure it's flipped down and plugged in.</li><li><b>"STOP" on the display:</b> it was flipped up while cooking.</li><li>Steam and the fan running after cooking are normal.</li></ul>
+  <h4>Please don't</h4>
+  <ul class="dont"><li>Use foil, paper or plastic inside.</li><li>Flip it up while hot. Wait for <b>FLIP</b> on the display.</li><li>Leave it running unattended.</li></ul>
+</section>
+
+<section class="dev" id="air-fryer">
+  <h3>Air fryer</h3>
+  <p class="model">Cosori TurboBlaze 6-quart</p>
+  <ol>
+    <li>Check the crisper plate is in the basket and the basket is pushed all the way in.</li>
+    <li>Press <b>On/Off</b>. To preheat, press <b>PREHEAT</b> then <b>Start/Pause</b>; add food when it shows End.</li>
+    <li>Pick a function (Air Fry, Roast, Bake, Reheat and more) and adjust time and temperature with the arrows.</li>
+    <li>Press <b>Start/Pause</b>. Pulling the basket out pauses cooking.</li>
+    <li>Use tongs to remove food. Careful tipping the basket, the hot plate can fall out.</li>
+  </ol>
+  <h4>If it's not working</h4>
+  <ul><li>White smoke is normal with greasy food. <b>Dark smoke:</b> unplug it right away.</li><li>Error code: text us.</li></ul>
+  <h4>Please don't</h4>
+  <ul class="dont"><li>Use metal utensils or scouring pads.</li><li>Fill the basket with oil. It isn't a deep fryer.</li><li>Put anything on top of the unit.</li></ul>
+</section>
+
+<section class="dev" id="instant-pot">
+  <h3>Instant Pot</h3>
+  <p class="model">Instant Pot Duo Plus 9-in-1</p>
+  <ol>
+    <li>Put the steel inner pot in the base. Add food and at least 1½–2 cups of liquid. Never fill above the <b>2/3</b> line (½ for rice, beans and pasta).</li>
+    <li>Turn the lid clockwise to lock and set the steam switch to <b>Seal</b>.</li>
+    <li>Press <b>Pressure Cook</b>, set the time, and press <b>Start</b>. It takes 10–15 minutes to build pressure.</li>
+    <li>Release steam by waiting (natural release) or moving the switch to <b>Vent</b>. Keep hands and face clear. Open only when it shows <b>OK to Open Lid</b>.</li>
+  </ol>
+  <h4>If it's not working</h4>
+  <ul><li><b>"Lid":</b> open and close the lid again.</li><li><b>"Food Burn" or steam leaking:</b> press Cancel, check the switch is on Seal and there's enough liquid.</li></ul>
+  <h4>Please don't</h4>
+  <ul class="dont"><li>Force the lid open.</li><li>Put food in the base without the inner pot.</li></ul>
+</section>
+
+<h2 class="area">Outdoors</h2>
+
+<section class="dev" id="hot-tub">
+  <h3>Hot tub</h3>
+  <p class="model">Caldera Spa · on the deck</p>
+  <ol>
+    <li>Unlock the cover and lift it by the handles.</li>
+    <li>Feel the water with your hand before getting in.</li>
+    <li><b>Jets:</b> press <b>JETS</b> (or tap Jets on a touchscreen). They turn off after 1 hour; just turn them back on.</li>
+    <li><b>Lights:</b> press <b>LIGHTS</b> (or tap Lights).</li>
+    <li><b>Temperature:</b> adjust between 80°F and 104°F. READY means it's within 2°F of the setting.</li>
+    <li>When you're done, turn the jets off, replace the cover, and <b>lock it</b>.</li>
+  </ol>
+  <h4>Safety</h4>
+  <ul>
+    <li>Maximum 104°F. Use lower temperatures for children and for soaks over 10 minutes.</li>
+    <li>If pregnant, keep it at 100°F or below and check with your doctor first.</li>
+    <li>Alcohol and drowsy-making medications raise the risk of overheating.</li>
+    <li>Always watch children closely. Wet decks are slippery.</li>
+    <li>No glass in or near the hot tub. Plastic cups only.</li>
+  </ul>
+  <h4>If it's not working</h4>
+  <ul><li>Controls don't respond, jets are weak, or the water isn't heating: text us. Please don't open the equipment panel or reset breakers.</li></ul>
+  <h4>Please don't</h4>
+  <ul class="dont"><li>Sit or stand on the cover.</li><li>Add chemicals or cleaners.</li></ul>
+</section>
+
+<h2 class="area">Comfort &amp; care</h2>
+
+<section class="dev" id="fans">
+  <h3>Ceiling fans</h3>
+  <p class="model">Maverick fans with remote</p>
+  <ol>
+    <li>Press <b>UP</b> or <b>DOWN</b> to change speed. Press <b>OFF</b> to stop.</li>
+    <li>To reverse airflow, press <b>Fan/R</b> while it's running. It takes about 25 seconds and may wobble briefly.</li>
+  </ol>
+  <h4>If it's not working</h4>
+  <ul><li>Check the wall switch is on.</li><li>Replace the remote's 2 AAA batteries.</li><li>If something bumped the blades, the fan stops itself. Clear it, then turn the fan off and on with the remote.</li></ul>
+</section>
+
+<section class="dev" id="vacuum">
+  <h3>Cordless vacuum</h3>
+  <p class="model">Bissell FurGuard</p>
+  <ol>
+    <li>Take it off the wall mount and press <b>Power</b>.</li>
+    <li>Press <b>Mode</b> for Eco (about 40 min), Medium (25) or Turbo (13).</li>
+    <li>For furniture or stairs, press the release button and use the hand vacuum.</li>
+    <li>Empty the dirt tank over the trash, then return it to the wall mount to charge.</li>
+  </ol>
+  <h4>Please don't</h4>
+  <ul class="dont"><li>Vacuum water, glass, or fireplace ashes.</li><li>Use it outdoors.</li></ul>
+</section>
+
+<section class="dev" id="leak-sensors">
+  <h3>Water leak alarm</h3>
+  <p class="model">Small white sensors near sinks, toilets and the water heater</p>
+  <p>A <b>loud beeping alarm</b> or <b>flashing red light</b> means a sensor found water. Wipe the sensor and floor dry, look for the source, and <b>text us right away</b>.</p>
+</section>
+
+<div class="help"><strong>Need a hand?</strong>Text us at the number in your booking messages. We're happy to help.</div>
+</main>
+<footer>ASKA OVERLOOK · BLUE RIDGE, GEORGIA</footer>
+
+</body>
+</html>
