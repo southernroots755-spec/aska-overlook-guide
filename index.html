@@ -74,6 +74,19 @@ b{font-weight:600}
 .help{margin-top:34px; text-align:center; font-size:15px; color:var(--muted)}
 .help strong{display:block; font-family:var(--display); font-size:22px; color:var(--fg); margin-bottom:4px}
 footer{text-align:center; font-size:12px; color:var(--muted); padding-block:10px 30px; letter-spacing:.06em}
+
+[hidden]{display:none !important}
+.vh{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+nav.chips .search{max-width:760px; margin:0 auto; padding:16px 16px 0}
+nav.chips.searching .search{padding-bottom:16px}
+.sbox{position:relative}
+.sbox svg{position:absolute; left:13px; top:50%; transform:translateY(-50%); width:18px; height:18px; color:var(--muted); pointer-events:none}
+.sbox input{width:100%; font:inherit; font-size:16px; color:var(--fg); background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:11px 14px 11px 40px; -webkit-appearance:none; appearance:none}
+.sbox input::placeholder{color:var(--muted); opacity:1}
+.sbox input:focus-visible{outline:2px solid var(--accent); outline-offset:1px}
+.noresults{background:var(--surface); border:1px dashed var(--line); border-radius:12px; padding:18px 16px; margin:22px 0; text-align:center; color:var(--muted)}
+main a{color:var(--accent)}
+.mast a{color:var(--cream); text-decoration-color:#D97B3A}
 </style>
 </head>
 <body>
@@ -98,20 +111,58 @@ footer{text-align:center; font-size:12px; color:var(--muted); padding-block:10px
   <p class="intro">How to use everything in the cabin, with quick fixes if something isn't working. If a fix doesn't work, please don't open or reset any equipment. Text us at <a href="sms:+17065146297">(706) 514-6297</a> and we'll help.</p>
 </header>
 
-<nav class="chips" id="sections" aria-label="Jump to a section">
+<nav class="chips" id="sections" aria-label="Search or jump to a section">
+  <div class="search" role="search">
+    <label for="q" class="vh">Search the guide</label>
+    <div class="sbox">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+      <input id="q" type="search" placeholder="Search: blankets, WiFi, hot tub" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search">
+    </div>
+    <span id="qstatus" class="vh" aria-live="polite"></span>
+  </div>
   <div class="label">Jump to</div>
   <div class="row">
-    <a href="#wifi">WiFi</a><a href="#door">Door</a><a href="#parking">Parking</a><a href="#thermostat">Thermostat</a>
-    <a href="#tv">TVs</a><a href="#roku">Roku</a><a href="#switch">Switch</a>
+    <a href="#checkout">Check-in &amp; out</a><a href="#directions">Getting here</a><a href="#wifi">WiFi</a><a href="#door">Door</a><a href="#parking">Parking</a><a href="#thermostat">Thermostat</a><a href="#rules">House rules</a>
+    <a href="#tv">TVs</a><a href="#roku">Roku</a><a href="#switch">Switch</a><a href="#games">Games</a>
     <a href="#coffee">Coffee</a><a href="#dishwasher">Dishwasher</a><a href="#toaster-oven">Toaster oven</a>
     <a href="#air-fryer">Air fryer</a><a href="#instant-pot">Instant Pot</a>
-    <a href="#hot-tub">Hot tub</a><a href="#speaker">Speaker</a><a href="#grill">Grill</a><a href="#fire-pit">Fire pit</a><a href="#waterfall">Waterfall</a><a href="#trash">Trash</a><a href="#fireplaces">Fireplaces</a><a href="#laundry">Laundry</a><a href="#fans">Fans</a><a href="#windows">Windows</a><a href="#vacuum">Vacuum</a><a href="#leak-sensors">Leak alarm</a><a href="#safety">Safety</a><a href="#local">Local favorites</a>
+    <a href="#hot-tub">Hot tub</a><a href="#speaker">Speaker</a><a href="#grill">Grill</a><a href="#fire-pit">Fire pit</a><a href="#waterfall">Waterfall</a><a href="#trash">Trash</a><a href="#wildlife">Wildlife</a><a href="#bedding">Extra bedding</a><a href="#fireplaces">Fireplaces</a><a href="#laundry">Laundry</a><a href="#fans">Fans</a><a href="#windows">Windows</a><a href="#water">Water</a><a href="#septic">Septic</a><a href="#power">Power outage</a><a href="#vacuum">Vacuum</a><a href="#leak-sensors">Leak alarm</a><a href="#safety">Safety</a><a href="#local">Local favorites</a>
   </div>
 </nav>
 
 <main>
 
+<p class="noresults" id="noresults" hidden>No matches. Try another word, or text us at <a href="sms:+17065146297">(706) 514-6297</a> and we'll help.</p>
+
 <h2 class="area">Getting settled</h2>
+
+<section class="dev" id="checkout">
+  <h3>Check-in &amp; checkout</h3>
+  <p class="model">Check-in 4:00 PM · Checkout 10:00 AM</p>
+  <p>Hoping to arrive early or stay later? Text us. We'll say yes when the calendar allows, and a fee may apply.</p>
+  <h4>Before you leave</h4>
+  <ol>
+    <li>Load and start the dishwasher.</li>
+    <li>Put all trash in the <a href="#trash">bear-proof trash box</a> and latch the lid.</li>
+    <li>Make sure the fire pit and porch fireplace are completely out.</li>
+    <li>Turn off the TVs, gas fireplaces and lights.</li>
+    <li>Close every window.</li>
+    <li>Close and lock the hot tub cover.</li>
+    <li>Lock the front door: press the Lock icon on the keypad.</li>
+  </ol>
+</section>
+
+<section class="dev" id="directions">
+  <h3>Getting here</h3>
+  <p class="model">58 Overlook Way, Blue Ridge, GA 30513</p>
+  <ol>
+    <li>Once you turn onto <b>Overlook Way</b>, we're the <b>second house on the right</b>.</li>
+    <li>The cabin sits at the <b>crest of the hill</b>, so the driveway is hard to see until you're right on it. Slow down as you near the top.</li>
+    <li>Park in the driveway or the gravel spot by the fire pit. See <a href="#parking">Parking</a>.</li>
+  </ol>
+  <p>The road is paved all the way up. Downtown Blue Ridge is about 5 minutes away once you're down the mountain. <a href="https://www.google.com/maps/search/?api=1&amp;query=58+Overlook+Way%2C+Blue+Ridge%2C+GA+30513">Open in Google Maps</a></p>
+  <div class="note">In winter, mountain roads can get icy. Check the forecast and road conditions before you head up, and take the hill slowly.</div>
+</section>
 
 <section class="dev" id="wifi">
   <h3>WiFi</h3>
@@ -167,6 +218,24 @@ footer{text-align:center; font-size:12px; color:var(--muted); padding-block:10px
   <ul><li>Make sure the mode isn't set to Off. If the temperature won't change, text us.</li></ul>
   <h4>Please don't</h4>
   <ul class="dont"><li>Pull the thermostat off the wall or change settings beyond temperature and mode.</li></ul>
+</section>
+
+<section class="dev" id="rules">
+  <h3>House rules</h3>
+  <p class="model">The short version of your rental agreement</p>
+  <ul>
+    <li><b>Up to 9 guests,</b> and only those on the reservation. An adult 18 or older must be at the cabin whenever anyone under 18 is.</li>
+    <li><b>Quiet hours</b> are 10 PM to 8 AM. No parties or events.</li>
+    <li><b>No smoking or vaping inside.</b> Smoking is fine on the porches and decks, but never in or at the hot tub. Put butts fully out and in the outdoor trash.</li>
+    <li><b>No pets.</b> Service animals are welcome; please let us know before you arrive.</li>
+    <li><b>3 vehicles max.</b> No RVs, campers or trailers overnight.</li>
+    <li><b>Neighborhood rule:</b> please don't hang laundry or towels outside, including on the deck railings.</li>
+  </ul>
+  <h4>Cameras &amp; sensors</h4>
+  <ul>
+    <li>Exterior security cameras cover the <b>driveway and the secondary parking area</b> only. There are no cameras inside the cabin or at the hot tub.</li>
+    <li>A noise sensor inside may measure sound levels. It never records audio.</li>
+  </ul>
 </section>
 
 <h2 class="area">Entertainment</h2>
@@ -240,6 +309,18 @@ footer{text-align:center; font-size:12px; color:var(--muted); padding-block:10px
   <ul><li>Controller won't connect: repeat step 2 or use the cable. No picture: check the TV input.</li></ul>
   <h4>Please don't</h4>
   <ul class="dont"><li>Move the console to another room or take it out of the dock.</li><li>Make purchases in the eShop.</li></ul>
+</section>
+
+<section class="dev" id="games">
+  <h3>Games &amp; play</h3>
+  <p class="model">Putting green, cornhole, reading nook and more</p>
+  <ul>
+    <li><b>Putting green:</b> the BirdieBall green is in the basement living room, by the windows.</li>
+    <li><b>Game table:</b> the long table in the basement living room is perfect for cards and board games.</li>
+    <li><b>Cornhole:</b> set up by the fire pit.</li>
+    <li><b>Kids' reading nook:</b> on the basement level.</li>
+    <li><b>Video games:</b> see <a href="#switch">Nintendo Switch 2</a> in the bunk room.</li>
+  </ul>
 </section>
 
 <h2 class="area" id="kitchen">Kitchen</h2>
@@ -447,7 +528,29 @@ footer{text-align:center; font-size:12px; color:var(--muted); padding-block:10px
   <ul class="dont"><li>Leave trash bags on the decks or outside the box, even overnight.</li></ul>
 </section>
 
+<section class="dev" id="wildlife">
+  <h3>Wildlife</h3>
+  <p class="model">This is black bear country</p>
+  <ul>
+    <li>Keep all trash in the <a href="#trash">bear-proof trash box</a> with the lid latched.</li>
+    <li>Don't leave food, coolers or trash on the decks or in your car.</li>
+    <li>If you see a bear, enjoy it from inside or from a good distance. Never approach or feed one.</li>
+  </ul>
+  <p>In fall, a few stink bugs or ladybugs finding their way inside is normal in the mountains. If you see a lot of them, text us.</p>
+</section>
+
 <h2 class="area">Comfort &amp; care</h2>
+
+<section class="dev" id="bedding">
+  <h3>Extra bedding</h3>
+  <p class="model">Extra blankets, pillows and pillowcases</p>
+  <ul>
+    <li><b>Primary bedroom and guest bedroom (the king rooms):</b> a storage container in each closet holds an extra-large blanket, plus pillows with pillowcases.</li>
+    <li><b>Overflow bunk room</b> (the &ldquo;Little Bear Cave&rdquo; off the bunk room): a storage container holds extra pillows and pillowcases.</li>
+    <li><b>Blankets for the bunk beds:</b> large extra blankets are stored inside the sofa in the basement living room. The seats lift up.</li>
+    <li><b>Throws for the sofas:</b> extra blankets for the couches are in the living rooms.</li>
+  </ul>
+</section>
 
 <section class="dev" id="fireplaces">
   <h3>Gas fireplaces</h3>
@@ -490,6 +593,41 @@ footer{text-align:center; font-size:12px; color:var(--muted); padding-block:10px
   <p class="model">Please keep all windows closed</p>
   <p>The windows don't have screens, and with no roof overhang, rain comes straight in. The cabin stays comfortable with the AC and ceiling fans, and the decks and porches are the best way to enjoy the fresh mountain air.</p>
   <div class="note">Before you head out for the day or leave at checkout, please make sure every window is closed.</div>
+</section>
+
+<section class="dev" id="water">
+  <h3>Water</h3>
+  <p class="model">Private well · two water filtration systems</p>
+  <p>The cabin's water comes from its own well and runs through two filtration systems.</p>
+  <h4>If it's not working</h4>
+  <ul><li>Low water pressure, or water that looks cloudy or smells off: text us.</li></ul>
+</section>
+
+<section class="dev" id="septic">
+  <h3>Toilets &amp; septic</h3>
+  <p class="model">The cabin is on a septic system · no garbage disposal</p>
+  <ul>
+    <li>Flush only toilet paper.</li>
+    <li>Scrape food scraps into the trash, not the sink.</li>
+  </ul>
+  <h4>If it's not working</h4>
+  <ul><li>A toilet is slow or backing up: stop flushing it and text us.</li></ul>
+  <h4>Please don't</h4>
+  <ul class="dont"><li>Flush wipes (even &ldquo;flushable&rdquo; ones), paper towels or feminine products.</li><li>Pour grease or cooking oil down any drain.</li></ul>
+</section>
+
+<section class="dev" id="power">
+  <h3>Power outages</h3>
+  <p class="model">Generac whole-home generator</p>
+  <ul>
+    <li>If the power goes out, the generator starts on its own. The power comes back on after a short pause.</li>
+    <li>WiFi and TVs can take a few minutes to reconnect.</li>
+    <li>The front door keypad keeps working during an outage.</li>
+  </ul>
+  <h4>If it's not working</h4>
+  <ul><li>Still no power after a few minutes: text us.</li></ul>
+  <h4>Please don't</h4>
+  <ul class="dont"><li>Touch or try to restart the generator.</li></ul>
 </section>
 
 <section class="dev" id="vacuum">
@@ -605,5 +743,94 @@ footer{text-align:center; font-size:12px; color:var(--muted); padding-block:10px
 <footer>ASKA OVERLOOK · BLUE RIDGE, GEORGIA</footer>
 <a class="totop" href="#sections">↑ All sections</a>
 
+<script>
+/* Guide search: filters the cards as you type. Extra words per card catch synonyms; add a line here when you add a card. */
+(function(){
+  var KW = {
+    checkout:'check in checkin check out arrival arrive arriving leave leaving departure depart time times early late',
+    directions:'address gps map maps directions drive driving driveway location find road hill snow ice winter uber lyft',
+    wifi:'internet password network wireless online connect',
+    door:'lock locked code keypad key entry',
+    parking:'car cars park vehicle vehicles driveway',
+    thermostat:'heat heater heating ac air conditioning cool cold hot temperature nest',
+    rules:'rule rules occupancy guests quiet hours noise party parties smoking smoke vape vaping pet pets dog dogs camera cameras sensor',
+    tv:'television tvs remote volume soundbar',
+    roku:'streaming netflix hulu disney youtube apps sign login',
+    'switch':'nintendo video games mario kart controller',
+    games:'game games board cards putting golf cornhole books reading kids children toys play',
+    coffee:'keurig pods kcup iced tea',
+    dishwasher:'dishes detergent pods',
+    'toaster-oven':'toast oven bake',
+    'air-fryer':'airfryer fry',
+    'instant-pot':'pressure cooker slow rice',
+    'hot-tub':'spa jacuzzi jets cover',
+    speaker:'bluetooth music lantern',
+    grill:'bbq barbecue propane cook',
+    'fire-pit':'firewood wood fire campfire smores',
+    waterfall:'pond water feature',
+    trash:'garbage recycling bear box bin',
+    wildlife:'bear bears animals bugs stink ladybugs critters',
+    bedding:'blanket blankets pillow pillows pillowcase pillowcases sheets comforter throw throws linens cold',
+    fireplaces:'fireplace fire logs',
+    laundry:'washer dryer wash detergent clothes towels',
+    fans:'fan ceiling remote',
+    windows:'window open screens rain',
+    water:'drinking drink tap filter filtered filtration well pressure',
+    septic:'toilet toilets flush plumbing clog clogged wipes disposal sink bathroom drain',
+    power:'outage electricity generator lights blackout storm',
+    vacuum:'cleaner bissell spill',
+    'leak-sensors':'leak alarm beeping sensor',
+    eat:'restaurant restaurants dinner food eat drinks bar',
+    breakfast:'brunch coffee shop',
+    explore:'things to do activities train shopping',
+    'lake-river':'lake river boat kayak tubing swim swimming fishing',
+    hikes:'hike hiking trail trails',
+    essentials:'grocery groceries store walmart pharmacy hospital doctor medical',
+    safety:'emergency 911 extinguisher first aid smoke detector carbon monoxide cell service'
+  };
+  var STOP = ' a an and are at can do does for get how i in is it my of on or the there to use we what where with ';
+  var input = document.getElementById('q');
+  if (!input) return;
+  var nav = document.getElementById('sections');
+  var row = nav.querySelector('.row'), label = nav.querySelector('.label');
+  var none = document.getElementById('noresults'), status = document.getElementById('qstatus');
+  var cards = [].slice.call(document.querySelectorAll('main section.dev'));
+  var heads = [].slice.call(document.querySelectorAll('main h2.area'));
+  var extras = [].slice.call(document.querySelectorAll('main > :not(section):not(h2):not(#noresults):not(.help)'));
+  function norm(t){
+    return t.toLowerCase().normalize('NFD').replace(/\p{M}/gu,'').replace(/[^a-z0-9]+/g,' ')
+      .replace(/\bcheck (out|in)\b/g,'check$1').replace(/\bwi fi\b/g,'wifi');
+  }
+  var hay = cards.map(function(c){ return ' ' + norm(c.textContent + ' ' + (KW[c.id] || '')) + ' '; });
+  function hit(h, t){
+    if (h.indexOf(' ' + t) > -1) return true;
+    return t.length > 3 && t.slice(-1) === 's' && h.indexOf(' ' + t.slice(0, -1)) > -1;
+  }
+  function run(){
+    var terms = norm(input.value).split(' ').filter(function(t){ return t && STOP.indexOf(' ' + t + ' ') < 0; });
+    var active = terms.length > 0, n = 0;
+    cards.forEach(function(c, i){
+      var ok = terms.every(function(t){ return hit(hay[i], t); });
+      c.hidden = !ok; if (ok) n++;
+    });
+    heads.forEach(function(h){
+      var el = h.nextElementSibling, any = false;
+      while (el && el.tagName !== 'H2') { if (el.matches('section.dev') && !el.hidden) { any = true; break; } el = el.nextElementSibling; }
+      h.hidden = !any;
+    });
+    extras.forEach(function(x){ x.hidden = active; });
+    row.hidden = active; label.hidden = active;
+    nav.classList.toggle('searching', active);
+    none.hidden = !(active && n === 0);
+    status.textContent = active ? (n + (n === 1 ? ' match' : ' matches')) : '';
+  }
+  input.addEventListener('input', run);
+  input.addEventListener('search', run);
+  input.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') { input.value = ''; run(); }
+    if (e.key === 'Enter') { e.preventDefault(); input.blur(); }
+  });
+})();
+</script>
 </body>
 </html>
