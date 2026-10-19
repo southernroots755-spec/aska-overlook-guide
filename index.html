@@ -86,6 +86,8 @@ nav.chips.searching .search{padding-bottom:16px}
 .sbox input:focus-visible{outline:2px solid var(--accent); outline-offset:1px}
 .noresults{background:var(--surface); border:1px dashed var(--line); border-radius:12px; padding:18px 16px; margin:22px 0; text-align:center; color:var(--muted)}
 main a{color:var(--accent)}
+.more{font-size:14px; color:var(--muted); margin:18px 0 0}
+.more button{font:inherit; color:var(--accent); background:none; border:0; padding:0; text-decoration:underline; cursor:pointer}
 .mast a{color:var(--cream); text-decoration-color:#D97B3A}
 </style>
 </head>
@@ -126,12 +128,13 @@ main a{color:var(--accent)}
     <a href="#tv">TVs</a><a href="#roku">Roku</a><a href="#switch">Switch</a><a href="#games">Games</a>
     <a href="#coffee">Coffee</a><a href="#dishwasher">Dishwasher</a><a href="#toaster-oven">Toaster oven</a>
     <a href="#air-fryer">Air fryer</a><a href="#instant-pot">Instant Pot</a>
-    <a href="#hot-tub">Hot tub</a><a href="#speaker">Speaker</a><a href="#grill">Grill</a><a href="#fire-pit">Fire pit</a><a href="#waterfall">Waterfall</a><a href="#trash">Trash</a><a href="#wildlife">Wildlife</a><a href="#bedding">Extra bedding</a><a href="#fireplaces">Fireplaces</a><a href="#laundry">Laundry</a><a href="#fans">Fans</a><a href="#windows">Windows</a><a href="#water">Water</a><a href="#septic">Septic</a><a href="#power">Power outage</a><a href="#vacuum">Vacuum</a><a href="#leak-sensors">Leak alarm</a><a href="#safety">Safety</a><a href="#local">Local favorites</a>
+    <a href="#hot-tub">Hot tub</a><a href="#speaker">Speaker</a><a href="#grill">Grill</a><a href="#fire-pit">Fire pit</a><a href="#waterfall">Waterfall</a><a href="#lights">Outdoor lights</a><a href="#trash">Trash</a><a href="#wildlife">Wildlife</a><a href="#bedding">Extra bedding</a><a href="#supplies">Supplies</a><a href="#fireplaces">Fireplaces</a><a href="#laundry">Laundry</a><a href="#fans">Fans</a><a href="#windows">Windows</a><a href="#water">Water</a><a href="#septic">Septic</a><a href="#power">Power outage</a><a href="#vacuum">Vacuum</a><a href="#leak-sensors">Leak alarm</a><a href="#safety">Safety</a><a href="#local">Local favorites</a>
   </div>
 </nav>
 
 <main>
 
+<p class="more" id="moreres" hidden>Showing the best matches. <button type="button">Show all results</button></p>
 <p class="noresults" id="noresults" hidden>No matches. Try another word, or text us at <a href="sms:+17065146297">(706) 514-6297</a> and we'll help.</p>
 
 <h2 class="area">Getting settled</h2>
@@ -150,17 +153,18 @@ main a{color:var(--accent)}
     <li>Close and lock the hot tub cover.</li>
     <li>Lock the front door: press the Lock icon on the keypad.</li>
   </ol>
+  <p>No need to strip the beds. Please leave the linens on them.</p>
 </section>
 
 <section class="dev" id="directions">
   <h3>Getting here</h3>
   <p class="model">58 Overlook Way, Blue Ridge, GA 30513</p>
   <ol>
-    <li>Once you turn onto <b>Overlook Way</b>, we're the <b>second house on the right</b>.</li>
+    <li>Once you turn onto <b>Overlook Way</b>, we're the <b>second house on the right</b>. Look for the blue <b>58</b> sign at the street.</li>
     <li>The cabin sits at the <b>crest of the hill</b>, so the driveway is hard to see until you're right on it. Slow down as you near the top.</li>
     <li>Park in the driveway or the gravel spot by the fire pit. See <a href="#parking">Parking</a>.</li>
   </ol>
-  <p>The road is paved all the way up. Downtown Blue Ridge is about 5 minutes away once you're down the mountain. <a href="https://www.google.com/maps/search/?api=1&amp;query=58+Overlook+Way%2C+Blue+Ridge%2C+GA+30513">Open in Google Maps</a></p>
+  <p>Google Maps will get you here, and the road is paved all the way up. Downtown Blue Ridge is about 5 minutes away once you're down the mountain. <a href="https://www.google.com/maps/search/?api=1&amp;query=58+Overlook+Way%2C+Blue+Ridge%2C+GA+30513">Open in Google Maps</a></p>
   <div class="note">In winter, mountain roads can get icy. Check the forecast and road conditions before you head up, and take the hill slowly.</div>
 </section>
 
@@ -316,9 +320,10 @@ main a{color:var(--accent)}
   <p class="model">Putting green, cornhole, reading nook and more</p>
   <ul>
     <li><b>Putting green:</b> the BirdieBall green is in the basement living room, by the windows.</li>
+    <li><b>Board and card games:</b> on the shelf in the basement.</li>
     <li><b>Game table:</b> the long table in the basement living room is perfect for cards and board games.</li>
     <li><b>Cornhole:</b> set up by the fire pit.</li>
-    <li><b>Kids' reading nook:</b> on the basement level.</li>
+    <li><b>Kids' reading nook:</b> in the basement, on the left as you walk into the bunk room.</li>
     <li><b>Video games:</b> see <a href="#switch">Nintendo Switch 2</a> in the bunk room.</li>
   </ul>
 </section>
@@ -517,6 +522,14 @@ main a{color:var(--accent)}
   <ul class="dont"><li>Climb on the rocks or let kids play in the reservoir.</li></ul>
 </section>
 
+<section class="dev" id="lights">
+  <h3>Outdoor lights</h3>
+  <p class="model">On a timer · on in the evening, off early in the morning</p>
+  <p>The outdoor lights turn on and off by themselves. To turn them on or off yourself, use the timer plug on the <b>wooden block near the top of the waterfall</b>.</p>
+  <h4>Please don't</h4>
+  <ul class="dont"><li>Change the timer settings or unplug the waterfall. It's plugged in there too.</li></ul>
+</section>
+
 <section class="dev" id="trash">
   <h3>Trash</h3>
   <p class="model">Bear-proof metal trash box at the corner of the driveway</p>
@@ -549,6 +562,24 @@ main a{color:var(--accent)}
     <li><b>Overflow bunk room</b> (the &ldquo;Little Bear Cave&rdquo; off the bunk room): a storage container holds extra pillows and pillowcases.</li>
     <li><b>Blankets for the bunk beds:</b> large extra blankets are stored inside the sofa in the basement living room. The seats lift up.</li>
     <li><b>Throws for the sofas:</b> extra blankets for the couches are in the living rooms.</li>
+  </ul>
+  <p>Blankets are fine to use on the decks and by the fire pit. Please keep them away from sparks and out of the hot tub.</p>
+  <h4>Please don't</h4>
+  <ul class="dont"><li>Take pillows outside.</li></ul>
+</section>
+
+<section class="dev" id="supplies">
+  <h3>Supplies &amp; extras</h3>
+  <p class="model">Laundry closet shelf and under the sinks</p>
+  <ul>
+    <li><b>Extra supplies</b> like toilet paper, paper towels and trash bags: on the shelf in the laundry closet or under the sinks.</li>
+    <li><b>Hair dryers:</b> under each bathroom sink.</li>
+    <li><b>Iron and ironing board:</b> in the laundry closet.</li>
+  </ul>
+  <h4>For little ones</h4>
+  <ul>
+    <li><b>Pack-and-play</b> (with sheets): in the primary bedroom closet.</li>
+    <li><b>High chair:</b> in the main-floor guest bedroom closet.</li>
   </ul>
 </section>
 
@@ -597,8 +628,8 @@ main a{color:var(--accent)}
 
 <section class="dev" id="water">
   <h3>Water</h3>
-  <p class="model">Private well · two water filtration systems</p>
-  <p>The cabin's water comes from its own well and runs through two filtration systems.</p>
+  <p class="model">Private well · two filtration systems · safe to drink</p>
+  <p>The cabin's water comes from its own well and runs through two filtration systems. <b>The tap water is safe to drink,</b> and the refrigerator has its own water filter too.</p>
   <h4>If it's not working</h4>
   <ul><li>Low water pressure, or water that looks cloudy or smells off: text us.</li></ul>
 </section>
@@ -611,7 +642,7 @@ main a{color:var(--accent)}
     <li>Scrape food scraps into the trash, not the sink.</li>
   </ul>
   <h4>If it's not working</h4>
-  <ul><li>A toilet is slow or backing up: stop flushing it and text us.</li></ul>
+  <ul><li>A toilet is slow or backing up: stop flushing and use the plunger in that bathroom. If that doesn't clear it, text us.</li></ul>
   <h4>Please don't</h4>
   <ul class="dont"><li>Flush wipes (even &ldquo;flushable&rdquo; ones), paper towels or feminine products.</li><li>Pour grease or cooking oil down any drain.</li></ul>
 </section>
@@ -768,15 +799,17 @@ main a{color:var(--accent)}
     grill:'bbq barbecue propane cook',
     'fire-pit':'firewood wood fire campfire smores',
     waterfall:'pond water feature',
+    lights:'light lighting string cafe timer plug outlet dark night evening',
     trash:'garbage recycling bear box bin',
     wildlife:'bear bears animals bugs stink ladybugs critters',
+    supplies:'supply toilet paper towels trash bags hair dryer hairdryer blow iron ironing board pack play crib playpen portacrib high chair highchair baby babies toddler infant shampoo soap',
     bedding:'blanket blankets pillow pillows pillowcase pillowcases sheets comforter throw throws linens cold',
     fireplaces:'fireplace fire logs',
     laundry:'washer dryer wash detergent clothes towels',
     fans:'fan ceiling remote',
     windows:'window open screens rain',
-    water:'drinking drink tap filter filtered filtration well pressure',
-    septic:'toilet toilets flush plumbing clog clogged wipes disposal sink bathroom drain',
+    water:'drinking drink tap filter filtered filtration well pressure safe fridge refrigerator ice',
+    septic:'toilet toilets flush plumbing plunger clog clogged wipes disposal sink bathroom drain',
     power:'outage electricity generator lights blackout storm',
     vacuum:'cleaner bissell spill',
     'leak-sensors':'leak alarm beeping sensor',
@@ -796,7 +829,7 @@ main a{color:var(--accent)}
   var none = document.getElementById('noresults'), status = document.getElementById('qstatus');
   var cards = [].slice.call(document.querySelectorAll('main section.dev'));
   var heads = [].slice.call(document.querySelectorAll('main h2.area'));
-  var extras = [].slice.call(document.querySelectorAll('main > :not(section):not(h2):not(#noresults):not(.help)'));
+  var extras = [].slice.call(document.querySelectorAll('main > :not(section):not(h2):not(#noresults):not(#moreres):not(.help)'));
   function norm(t){
     return t.toLowerCase().normalize('NFD').replace(/\p{M}/gu,'').replace(/[^a-z0-9]+/g,' ')
       .replace(/\bcheck (out|in)\b/g,'check$1').replace(/\bwi fi\b/g,'wifi');
@@ -806,13 +839,19 @@ main a{color:var(--accent)}
     if (h.indexOf(' ' + t) > -1) return true;
     return t.length > 3 && t.slice(-1) === 's' && h.indexOf(' ' + t.slice(0, -1)) > -1;
   }
+  var strong = cards.map(function(c){ var h = c.querySelector('h3'); return ' ' + norm((h ? h.textContent : '') + ' ' + (KW[c.id] || '')) + ' '; });
+  var more = document.getElementById('moreres'), moreBtn = more.querySelector('button');
+  var showAll = false;
   function run(){
     var terms = norm(input.value).split(' ').filter(function(t){ return t && STOP.indexOf(' ' + t + ' ') < 0; });
-    var active = terms.length > 0, n = 0;
-    cards.forEach(function(c, i){
-      var ok = terms.every(function(t){ return hit(hay[i], t); });
-      c.hidden = !ok; if (ok) n++;
-    });
+    var active = terms.length > 0;
+    function all(h){ return terms.every(function(t){ return hit(h, t); }); }
+    var weak = hay.map(all);
+    var best = strong.map(function(h){ return active && all(h); });
+    var nWeak = weak.filter(Boolean).length, nBest = best.filter(Boolean).length;
+    var useBest = active && !showAll && nBest > 0 && nBest < nWeak;
+    var shown = useBest ? best : weak, n = 0;
+    cards.forEach(function(c, i){ c.hidden = !shown[i]; if (shown[i]) n++; });
     heads.forEach(function(h){
       var el = h.nextElementSibling, any = false;
       while (el && el.tagName !== 'H2') { if (el.matches('section.dev') && !el.hidden) { any = true; break; } el = el.nextElementSibling; }
@@ -821,13 +860,16 @@ main a{color:var(--accent)}
     extras.forEach(function(x){ x.hidden = active; });
     row.hidden = active; label.hidden = active;
     nav.classList.toggle('searching', active);
+    more.hidden = !useBest;
+    moreBtn.textContent = 'Show all ' + nWeak + ' results';
     none.hidden = !(active && n === 0);
     status.textContent = active ? (n + (n === 1 ? ' match' : ' matches')) : '';
   }
-  input.addEventListener('input', run);
-  input.addEventListener('search', run);
+  input.addEventListener('input', function(){ showAll = false; run(); });
+  input.addEventListener('search', function(){ showAll = false; run(); });
+  moreBtn.addEventListener('click', function(){ showAll = true; run(); });
   input.addEventListener('keydown', function(e){
-    if (e.key === 'Escape') { input.value = ''; run(); }
+    if (e.key === 'Escape') { input.value = ''; showAll = false; run(); }
     if (e.key === 'Enter') { e.preventDefault(); input.blur(); }
   });
 })();
