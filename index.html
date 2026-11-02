@@ -68,6 +68,7 @@ ol,ul{margin:0 0 6px; padding-left:22px}
 li{margin:4px 0}
 li::marker{color:var(--sage); font-weight:600}
 p{margin:0 0 8px}
+.lede{font-family:var(--display); font-weight:500; font-size:21px; line-height:1.45; color:var(--fg); margin:0 0 18px; text-wrap:pretty}
 .note{background:var(--accent-soft); border-radius:8px; padding:10px 12px; font-size:15px; margin:10px 0}
 .dont li::marker{content:"✕  "; color:var(--accent); font-size:12px}
 b{font-weight:600}
@@ -558,13 +559,13 @@ main a{color:var(--accent)}
   <p class="model">Extra blankets, pillows and pillowcases</p>
   <ul>
     <li><b>Primary bedroom and guest bedroom (the king rooms):</b> a storage container in each closet holds an extra-large blanket, plus pillows with pillowcases.</li>
-    <li><b>Overflow bunk room</b> (the &ldquo;Little Bear Cave&rdquo; off the bunk room): a storage container holds extra pillows and pillowcases.</li>
+    <li><b>Overflow bunk room</b> (the &ldquo;Little Bear Cave&rdquo; off the bunk room): a storage container under the bottom bunk holds extra pillows and pillowcases.</li>
     <li><b>Blankets for the bunk beds:</b> large extra blankets are stored inside the sofa in the basement living room. The seats lift up.</li>
     <li><b>Throws for the sofas:</b> extra blankets for the couches are in the living rooms.</li>
   </ul>
-  <p>Blankets are fine to use on the decks and by the fire pit. Please keep them away from sparks and out of the hot tub.</p>
+  <div class="note"><b>Heading outside?</b> Please use only the blankets labeled <b>Outdoor Blankets</b>, in the basket by the basement living room fireplace. They're for the fire pit, the hanging bed and the porches. Keep them back from the fire, and out of the hot tub.</div>
   <h4>Please don't</h4>
-  <ul class="dont"><li>Take pillows outside.</li></ul>
+  <ul class="dont"><li>Take indoor blankets, throws or pillows outside.</li></ul>
 </section>
 
 <section class="dev" id="supplies">
@@ -681,36 +682,38 @@ main a{color:var(--accent)}
 
 <h2 class="area" id="local">Local favorites</h2>
 
+<p class="lede">Blue Ridge is the North Georgia mountains at their finest. Its historic, walkable downtown is lined with chef-driven restaurants, galleries, boutiques and tasting rooms, all wrapped in the Chattahoochee National Forest. Lake Blue Ridge, 3,290 acres of clear mountain water with three-quarters of its shoreline in national forest, is just minutes from the cabin, and the cold, clear Toccoa River has earned the area its title as the Trout Capital of Georgia. Add mountain vineyards, orchards, a vintage scenic railway and brilliant fall color, and your days can be as full or as unhurried as you like. Here are a few of our favorites.</p>
+
 <section class="dev" id="eat">
   <h3>Dinner &amp; drinks</h3>
   <p class="model">Downtown Blue Ridge is about 5 minutes once you're down the mountain</p>
   <ul>
-    <li><b>Harvest on Main</b> · 576 E Main St. Locally sourced comfort food in a lodge setting with a stone fireplace. Busy on weekends, so call ahead.</li>
-    <li><b>The General Ledger</b> · 260 W Main St. Steaks and seafood (try the pecan-crusted trout) in a historic former bank by the train depot.</li>
-    <li><b>Black Sheep</b> · downtown, in a historic house. Chef-driven, seasonal New American menu with a patio.</li>
+    <li><b>Harvest on Main</b> · 576 E Main St. Locally sourced comfort food in a lodge setting with a stone fireplace. Reservations recommended on weekends.</li>
+    <li><b>The General Ledger</b> · 260 W Main St. Steaks and seafood (try the pecan-crusted trout) in a historic former bank by the train depot. Ask about a table in the old vault, and book ahead.</li>
+    <li><b>Black Sheep</b> · 480 W Main St, in a historic house. Chef-driven, seasonal New American menu, a patio and weekend brunch.</li>
     <li><b>Southern Charm</b> · 224 W Main St. Fried chicken, fried green tomatoes and Southern classics.</li>
-    <li><b>Rum Cake Lady Cuban Café</b> · 205 W 1st St. Cubanos, empanadas and the famous rum cakes.</li>
-    <li><b>Toccoa Riverside Restaurant</b> · 8055 Aska Rd. Local trout, steaks and ribs on a deck over the Toccoa River. Closed Mondays and Tuesdays.</li>
-    <li><b>Boat Dock Bar &amp; Grill</b> · Lake Blue Ridge Marina, 335 Marina Dr. Smoked wings and sunset drinks on the lake.</li>
+    <li><b>Toccoa Riverside Restaurant</b> · 8055 Aska Rd. Local trout, steaks and ribs on a deck over the Toccoa River. Call ahead for hours.</li>
+    <li><b>Boat Dock Bar &amp; Grill</b> · Lake Blue Ridge Marina, 335 Marina Dr. Smoked wings and sunset drinks on the lake. Open seasonally, so check before you go.</li>
   </ul>
   <h4>Breweries &amp; wineries</h4>
   <ul>
     <li><b>Grumpy Old Men Brewing</b> · 1315 E Main St.</li>
-    <li><b>Angry Hops Brewery</b> · 341 E Main St.</li>
+    <li><b>Angry Hops Brewing</b> · 341 E Main St.</li>
     <li><b>Tipping Point Brewing</b> · 322 W Main St, upstairs at Trackside Station.</li>
-    <li><b>Bear Claw Vineyards</b> · Blue Ridge. Mountain-view vineyard with weekend music.</li>
+    <li><b>Bear Claw Vineyards</b> · 2281 Tennis Court Rd. Mountain-view vineyard with weekend music.</li>
     <li><b>Kerith House</b> · 611 Maple Grove Rd, Morganton. Boutique farm winery with a view patio.</li>
   </ul>
 </section>
 
 <section class="dev" id="breakfast">
-  <h3>Breakfast &amp; coffee</h3>
+  <h3>Breakfast, coffee &amp; lunch</h3>
   <ul>
     <li><b>Iron Bridge General Store &amp; Café</b> · 8436 Aska Rd, across from the historic Shallowford Bridge. Breakfast sandwiches, burritos, burgers and grab-and-go groceries.</li>
     <li><b>Mountain Mama's Coffee Lounge</b> · 771 E Main St. Specialty coffee, avocado toast and egg bites.</li>
     <li><b>The Dogwood (Bigfoot Biscuit)</b> · 520 W Main St. Big biscuit sandwiches.</li>
     <li><b>Royal Waffle King</b> · 4960 Appalachian Hwy. Old-school diner with waffle stacks and biscuits and gravy. Kid-friendly.</li>
     <li><b>The Yellowphant Café</b> · 3640 E 1st St. Shrimp and grits, challah French toast, and a candle shop.</li>
+    <li><b>Rum Cake Lady Cuban Café</b> · 205 W 1st St. Cuban coffee, Cubanos, empanadas and the famous rum cakes. Daytime only.</li>
   </ul>
 </section>
 
@@ -719,6 +722,7 @@ main a{color:var(--accent)}
   <ul>
     <li><b>Blue Ridge Scenic Railway</b> · 241 Depot St, downtown. Vintage train ride along the Toccoa River to McCaysville, GA and Copperhill, TN. Runs year-round, with fall foliage and holiday trains. Book ahead.</li>
     <li><b>Mercier Orchards</b> · 8660 Blue Ridge Dr. Family orchard since 1943: market, bakery (get the apple cider donuts and fried pies), hard cider tasting room and seasonal U-pick.</li>
+    <li><b>Zipline Canopy Tours of Blue Ridge</b> · 891 Old Cashes Valley Rd, about 6 miles west of downtown. Thirteen zips and three sky bridges, about a mile of cable in all, through the treetops, over open pasture and across Fightingtown Creek. Guided tours run year-round on a seasonal schedule. Book ahead, and check age and weight limits when you do.</li>
     <li><b>Downtown Blue Ridge</b> · Main Street shops, galleries and sweets. Easy to spend an afternoon walking.</li>
   </ul>
 </section>
@@ -802,7 +806,7 @@ main a{color:var(--accent)}
     trash:'garbage recycling bear box bin',
     wildlife:'bear bears animals bugs stink ladybugs critters',
     supplies:'supply toilet paper towels trash bags hair dryer hairdryer blow iron ironing board pack play crib playpen portacrib high chair highchair baby babies toddler infant shampoo soap',
-    bedding:'blanket blankets pillow pillows pillowcase pillowcases sheets comforter throw throws linens cold',
+    bedding:'blanket blankets pillow pillows pillowcase pillowcases sheets comforter throw throws linens cold outdoor outside',
     fireplaces:'fireplace fire logs',
     laundry:'washer dryer wash detergent clothes towels',
     fans:'fan ceiling remote',
@@ -812,9 +816,9 @@ main a{color:var(--accent)}
     power:'outage electricity generator lights blackout storm',
     vacuum:'cleaner bissell spill',
     'leak-sensors':'leak alarm beeping sensor',
-    eat:'restaurant restaurants dinner food eat drinks bar',
-    breakfast:'brunch coffee shop',
-    explore:'things to do activities train shopping',
+    eat:'restaurant restaurants dinner food eat drinks bar wine winery wineries vineyard brewery breweries beer cocktails',
+    breakfast:'brunch coffee shop lunch cuban',
+    explore:'things to do activities train shopping zipline zip line ziplining adventure',
     'lake-river':'lake river boat kayak tubing swim swimming fishing',
     hikes:'hike hiking trail trails',
     essentials:'grocery groceries store walmart pharmacy hospital doctor medical',
